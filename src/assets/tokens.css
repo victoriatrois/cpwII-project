@@ -1,0 +1,33 @@
+:root {
+  /* Severities */
+  --vt-neutral: #f2989a;
+  --vt-success: #7a892c;
+  --vt-info: #6a4fb8;
+  --vt-warning: #f28705;
+  --vt-danger: #d95b5b;
+  --vt-contrast: #000000;
+  --vt-white: #fffdff;
+  --vt-border: rgba(0, 0, 0, 0.12);
+
+  /* Radius */
+  --vt-radius: 8px;
+  --vt-radius-round: 9999px;
+
+  /* Spacing */
+  --vt-pad-y-sm: 0.375rem;
+  --vt-pad-x-sm: 0.75rem;
+  --vt-pad-y-md: 0.5rem;
+  --vt-pad-x-md: 1rem;
+  --vt-pad-y-lg: 0.75rem;
+  --vt-pad-x-lg: 1.25rem;
+
+  /* Typography */
+  --vt-gap: 0.5rem;
+  --vt-font-sm: 0.875rem;
+  --vt-font-md: 0.95rem;
+  --vt-font-lg: 1rem;
+
+  /* Focus */
+  --vt-ring: 3px;
+  --vt-ring-color: rgba(60, 36, 110, 0.35);
+}

@@ -1,0 +1,954 @@
+diff --git a/cpwII-project/package-lock.json b/cpwII-project/package-lock.json
+index 4f6cb69..10cd7ac 100644
+--- a/cpwII-project/package-lock.json
++++ b/cpwII-project/package-lock.json
+@@ -20,10 +20,11 @@
+         "eslint": "^9.33.0",
+         "eslint-plugin-vue": "~10.4.0",
+         "jiti": "^2.5.1",
++        "json-server": "^1.0.0-beta.3",
+         "npm-run-all2": "^8.0.4",
+         "prettier": "3.6.2",
+         "typescript": "~5.9.0",
+-        "vite": "^7.1.7",
++        "vite": "^7.2.4",
+         "vite-plugin-vue-devtools": "^8.0.2",
+         "vue-tsc": "^3.1.0"
+       },
+@@ -1631,6 +1632,263 @@
+         "url": "https://github.com/sponsors/sindresorhus"
+       }
+     },
++    "node_modules/@tinyhttp/accepts": {
++      "version": "2.2.3",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/accepts/-/accepts-2.2.3.tgz",
++      "integrity": "sha512-9pQN6pJAJOU3McmdJWTcyq7LLFW8Lj5q+DadyKcvp+sxMkEpktKX5sbfJgJuOvjk6+1xWl7pe0YL1US1vaO/1w==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "mime": "4.0.4",
++        "negotiator": "^0.6.3"
++      },
++      "engines": {
++        "node": ">=12.20.0"
++      },
++      "funding": {
++        "type": "individual",
++        "url": "https://github.com/tinyhttp/tinyhttp?sponsor=1"
++      }
++    },
++    "node_modules/@tinyhttp/app": {
++      "version": "2.5.2",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/app/-/app-2.5.2.tgz",
++      "integrity": "sha512-DcB3Y8GQppLQlO2VxRYF7LzTEAoZb+VRQXuIsErcu2fNaM1xdx6NQZDso5rlZUiaeg6KYYRfU34N4XkZbv6jSA==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "@tinyhttp/cookie": "2.1.1",
++        "@tinyhttp/proxy-addr": "2.2.1",
++        "@tinyhttp/req": "2.2.5",
++        "@tinyhttp/res": "2.2.5",
++        "@tinyhttp/router": "2.2.3",
++        "header-range-parser": "1.1.3",
++        "regexparam": "^2.0.2"
++      },
++      "engines": {
++        "node": ">=14.21.3"
++      },
++      "funding": {
++        "type": "individual",
++        "url": "https://github.com/tinyhttp/tinyhttp?sponsor=1"
++      }
++    },
++    "node_modules/@tinyhttp/content-disposition": {
++      "version": "2.2.2",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/content-disposition/-/content-disposition-2.2.2.tgz",
++      "integrity": "sha512-crXw1txzrS36huQOyQGYFvhTeLeG0Si1xu+/l6kXUVYpE0TjFjEZRqTbuadQLfKGZ0jaI+jJoRyqaWwxOSHW2g==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12.20.0"
++      },
++      "funding": {
++        "type": "individual",
++        "url": "https://github.com/tinyhttp/tinyhttp?sponsor=1"
++      }
++    },
++    "node_modules/@tinyhttp/content-type": {
++      "version": "0.1.4",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/content-type/-/content-type-0.1.4.tgz",
++      "integrity": "sha512-dl6f3SHIJPYbhsW1oXdrqOmLSQF/Ctlv3JnNfXAE22kIP7FosqJHxkz/qj2gv465prG8ODKH5KEyhBkvwrueKQ==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12.4"
++      }
++    },
++    "node_modules/@tinyhttp/cookie": {
++      "version": "2.1.1",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/cookie/-/cookie-2.1.1.tgz",
++      "integrity": "sha512-h/kL9jY0e0Dvad+/QU3efKZww0aTvZJslaHj3JTPmIPC9Oan9+kYqmh3M6L5JUQRuTJYFK2nzgL2iJtH2S+6dA==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12.20.0"
++      },
++      "funding": {
++        "type": "individual",
++        "url": "https://github.com/tinyhttp/tinyhttp?sponsor=1"
++      }
++    },
++    "node_modules/@tinyhttp/cookie-signature": {
++      "version": "2.1.1",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/cookie-signature/-/cookie-signature-2.1.1.tgz",
++      "integrity": "sha512-VDsSMY5OJfQJIAtUgeQYhqMPSZptehFSfvEEtxr+4nldPA8IImlp3QVcOVuK985g4AFR4Hl1sCbWCXoqBnVWnw==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12.20.0"
++      }
++    },
++    "node_modules/@tinyhttp/cors": {
++      "version": "2.0.1",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/cors/-/cors-2.0.1.tgz",
++      "integrity": "sha512-qrmo6WJuaiCzKWagv2yA/kw6hIISfF/hOqPWwmI6w0o8apeTMmRN3DoCFvQ/wNVuWVdU5J4KU7OX8aaSOEq51A==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "@tinyhttp/vary": "^0.1.3"
++      },
++      "engines": {
++        "node": ">=12.20 || 14.x || >=16"
++      }
++    },
++    "node_modules/@tinyhttp/encode-url": {
++      "version": "2.1.1",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/encode-url/-/encode-url-2.1.1.tgz",
++      "integrity": "sha512-AhY+JqdZ56qV77tzrBm0qThXORbsVjs/IOPgGCS7x/wWnsa/Bx30zDUU/jPAUcSzNOzt860x9fhdGpzdqbUeUw==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12.20.0"
++      }
++    },
++    "node_modules/@tinyhttp/etag": {
++      "version": "2.1.2",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/etag/-/etag-2.1.2.tgz",
++      "integrity": "sha512-j80fPKimGqdmMh6962y+BtQsnYPVCzZfJw0HXjyH70VaJBHLKGF+iYhcKqzI3yef6QBNa8DKIPsbEYpuwApXTw==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12.20.0"
++      }
++    },
++    "node_modules/@tinyhttp/forwarded": {
++      "version": "2.1.2",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/forwarded/-/forwarded-2.1.2.tgz",
++      "integrity": "sha512-9H/eulJ68ElY/+zYpTpNhZ7vxGV+cnwaR6+oQSm7bVgZMyuQfgROW/qvZuhmgDTIxnGMXst+Ba4ij6w6Krcs3w==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12.20.0"
++      }
++    },
++    "node_modules/@tinyhttp/logger": {
++      "version": "2.1.0",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/logger/-/logger-2.1.0.tgz",
++      "integrity": "sha512-Ma1fJ9CwUbn9r61/4HW6+nflsVoslpOnCrfQ6UeZq7GGIgwLzofms3HoSVG7M+AyRMJpxlfcDdbH5oFVroDMKA==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "colorette": "^2.0.20",
++        "dayjs": "^1.11.13",
++        "http-status-emojis": "^2.2.0"
++      },
++      "engines": {
++        "node": ">=14.18 || >=16.20"
++      }
++    },
++    "node_modules/@tinyhttp/proxy-addr": {
++      "version": "2.2.1",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/proxy-addr/-/proxy-addr-2.2.1.tgz",
++      "integrity": "sha512-BicqMqVI91hHq2BQmnqJUh0FQUnx7DncwSGgu2ghlh+JZG2rHK2ZN/rXkfhrx1rrUw6hnd0L36O8GPMh01+dDQ==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "@tinyhttp/forwarded": "2.1.2",
++        "ipaddr.js": "^2.2.0"
++      },
++      "engines": {
++        "node": ">=12.20.0"
++      }
++    },
++    "node_modules/@tinyhttp/req": {
++      "version": "2.2.5",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/req/-/req-2.2.5.tgz",
++      "integrity": "sha512-trfsXwtmsNjMcGKcLJ+45h912kLRqBQCQD06ams3Tq0kf4gHLxjHjoYOC1Z9yGjOn81XllRx8wqvnvr+Kbe3gw==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "@tinyhttp/accepts": "2.2.3",
++        "@tinyhttp/type-is": "2.2.4",
++        "@tinyhttp/url": "2.1.1",
++        "header-range-parser": "^1.1.3"
++      },
++      "engines": {
++        "node": ">=12.20.0"
++      }
++    },
++    "node_modules/@tinyhttp/res": {
++      "version": "2.2.5",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/res/-/res-2.2.5.tgz",
++      "integrity": "sha512-yBsqjWygpuKAVz4moWlP4hqzwiDDqfrn2mA0wviJAcgvGiyOErtlQwXY7aj3aPiCpURvxvEFO//Gdy6yV+xEpA==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "@tinyhttp/content-disposition": "2.2.2",
++        "@tinyhttp/cookie": "2.1.1",
++        "@tinyhttp/cookie-signature": "2.1.1",
++        "@tinyhttp/encode-url": "2.1.1",
++        "@tinyhttp/req": "2.2.5",
++        "@tinyhttp/send": "2.2.3",
++        "@tinyhttp/vary": "^0.1.3",
++        "es-escape-html": "^0.1.1",
++        "mime": "4.0.4"
++      },
++      "engines": {
++        "node": ">=12.20.0"
++      }
++    },
++    "node_modules/@tinyhttp/router": {
++      "version": "2.2.3",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/router/-/router-2.2.3.tgz",
++      "integrity": "sha512-O0MQqWV3Vpg/uXsMYg19XsIgOhwjyhTYWh51Qng7bxqXixxx2PEvZWnFjP7c84K7kU/nUX41KpkEBTLnznk9/Q==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12.20.0"
++      }
++    },
++    "node_modules/@tinyhttp/send": {
++      "version": "2.2.3",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/send/-/send-2.2.3.tgz",
++      "integrity": "sha512-o4cVHHGQ8WjVBS8UT0EE/2WnjoybrfXikHwsRoNlG1pfrC/Sd01u1N4Te8cOd/9aNGLr4mGxWb5qTm2RRtEi7g==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "@tinyhttp/content-type": "^0.1.4",
++        "@tinyhttp/etag": "2.1.2",
++        "mime": "4.0.4"
++      },
++      "engines": {
++        "node": ">=12.20.0"
++      }
++    },
++    "node_modules/@tinyhttp/type-is": {
++      "version": "2.2.4",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/type-is/-/type-is-2.2.4.tgz",
++      "integrity": "sha512-7F328NheridwjIfefBB2j1PEcKKABpADgv7aCJaE8x8EON77ZFrAkI3Rir7pGjopV7V9MBmW88xUQigBEX2rmQ==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "@tinyhttp/content-type": "^0.1.4",
++        "mime": "4.0.4"
++      },
++      "engines": {
++        "node": ">=12.20.0"
++      }
++    },
++    "node_modules/@tinyhttp/url": {
++      "version": "2.1.1",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/url/-/url-2.1.1.tgz",
++      "integrity": "sha512-POJeq2GQ5jI7Zrdmj22JqOijB5/GeX+LEX7DUdml1hUnGbJOTWDx7zf2b5cCERj7RoXL67zTgyzVblBJC+NJWg==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12.20.0"
++      }
++    },
++    "node_modules/@tinyhttp/vary": {
++      "version": "0.1.3",
++      "resolved": "https://registry.npmjs.org/@tinyhttp/vary/-/vary-0.1.3.tgz",
++      "integrity": "sha512-SoL83sQXAGiHN1jm2VwLUWQSQeDAAl1ywOm6T0b0Cg1CZhVsjoiZadmjhxF6FHCCY7OHHVaLnTgSMxTPIDLxMg==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12.20"
++      }
++    },
+     "node_modules/@tsconfig/node22": {
+       "version": "22.0.2",
+       "resolved": "https://registry.npmjs.org/@tsconfig/node22/-/node22-22.0.2.tgz",
+@@ -2501,6 +2759,22 @@
+         "url": "https://github.com/chalk/chalk?sponsor=1"
+       }
+     },
++    "node_modules/chokidar": {
++      "version": "4.0.3",
++      "resolved": "https://registry.npmjs.org/chokidar/-/chokidar-4.0.3.tgz",
++      "integrity": "sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "readdirp": "^4.0.1"
++      },
++      "engines": {
++        "node": ">= 14.16.0"
++      },
++      "funding": {
++        "url": "https://paulmillr.com/funding/"
++      }
++    },
+     "node_modules/color-convert": {
+       "version": "2.0.1",
+       "resolved": "https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz",
+@@ -2521,6 +2795,13 @@
+       "dev": true,
+       "license": "MIT"
+     },
++    "node_modules/colorette": {
++      "version": "2.0.20",
++      "resolved": "https://registry.npmjs.org/colorette/-/colorette-2.0.20.tgz",
++      "integrity": "sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==",
++      "dev": true,
++      "license": "MIT"
++    },
+     "node_modules/concat-map": {
+       "version": "0.0.1",
+       "resolved": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz",
+@@ -2585,6 +2866,13 @@
+       "integrity": "sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==",
+       "license": "MIT"
+     },
++    "node_modules/dayjs": {
++      "version": "1.11.19",
++      "resolved": "https://registry.npmjs.org/dayjs/-/dayjs-1.11.19.tgz",
++      "integrity": "sha512-t5EcLVS6QPBNqM2z8fakk/NKel+Xzshgt8FFKAn+qwlD1pzZWxh0nVCrvFK7ZDb6XucZeF9z8C7CBWTRIVApAw==",
++      "dev": true,
++      "license": "MIT"
++    },
+     "node_modules/debug": {
+       "version": "4.4.3",
+       "resolved": "https://registry.npmjs.org/debug/-/debug-4.4.3.tgz",
+@@ -2653,6 +2941,22 @@
+         "url": "https://github.com/sponsors/sindresorhus"
+       }
+     },
++    "node_modules/dot-prop": {
++      "version": "9.0.0",
++      "resolved": "https://registry.npmjs.org/dot-prop/-/dot-prop-9.0.0.tgz",
++      "integrity": "sha512-1gxPBJpI/pcjQhKgIU91II6Wkay+dLcN3M6rf2uwP8hRur3HtQXjVrdAK3sjC0piaEuxzMwjXChcETiJl47lAQ==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "type-fest": "^4.18.2"
++      },
++      "engines": {
++        "node": ">=18"
++      },
++      "funding": {
++        "url": "https://github.com/sponsors/sindresorhus"
++      }
++    },
+     "node_modules/electron-to-chromium": {
+       "version": "1.5.232",
+       "resolved": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.232.tgz",
+@@ -2682,6 +2986,16 @@
+         "url": "https://github.com/sponsors/antfu"
+       }
+     },
++    "node_modules/es-escape-html": {
++      "version": "0.1.1",
++      "resolved": "https://registry.npmjs.org/es-escape-html/-/es-escape-html-0.1.1.tgz",
++      "integrity": "sha512-yUx1o+8RsG7UlszmYPtks+dm6Lho2m8lgHMOsLJQsFI0R8XwUJwiMhM1M4E/S8QLeGyf6MkDV/pWgjQ0tdTSyQ==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12.x"
++      }
++    },
+     "node_modules/esbuild": {
+       "version": "0.25.10",
+       "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.25.10.tgz",
+@@ -3033,6 +3347,19 @@
+         "node": ">=0.10.0"
+       }
+     },
++    "node_modules/eta": {
++      "version": "3.5.0",
++      "resolved": "https://registry.npmjs.org/eta/-/eta-3.5.0.tgz",
++      "integrity": "sha512-e3x3FBvGzeCIHhF+zhK8FZA2vC5uFn6b4HJjegUbIWrDb4mJ7JjTGMJY9VGIbRVpmSwHopNiaJibhjIr+HfLug==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=6.0.0"
++      },
++      "funding": {
++        "url": "https://github.com/eta-dev/eta?sponsor=1"
++      }
++    },
+     "node_modules/execa": {
+       "version": "9.6.0",
+       "resolved": "https://registry.npmjs.org/execa/-/execa-9.6.0.tgz",
+@@ -3293,6 +3620,16 @@
+         "node": ">=8"
+       }
+     },
++    "node_modules/header-range-parser": {
++      "version": "1.1.3",
++      "resolved": "https://registry.npmjs.org/header-range-parser/-/header-range-parser-1.1.3.tgz",
++      "integrity": "sha512-B9zCFt3jH8g09LR1vHL4pcAn8yMEtlSlOUdQemzHMRKMImNIhhszdeosYFfNW0WXKQtXIlWB+O4owHJKvEJYaA==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12.22.0"
++      }
++    },
+     "node_modules/hookable": {
+       "version": "5.5.3",
+       "resolved": "https://registry.npmjs.org/hookable/-/hookable-5.5.3.tgz",
+@@ -3300,6 +3637,13 @@
+       "dev": true,
+       "license": "MIT"
+     },
++    "node_modules/http-status-emojis": {
++      "version": "2.2.0",
++      "resolved": "https://registry.npmjs.org/http-status-emojis/-/http-status-emojis-2.2.0.tgz",
++      "integrity": "sha512-ompKtgwpx8ff0hsbpIB7oE4ax1LXoHmftsHHStMELX56ivG3GhofTX8ZHWlUaFKfGjcGjw6G3rPk7dJRXMmbbg==",
++      "dev": true,
++      "license": "MIT"
++    },
+     "node_modules/human-signals": {
+       "version": "8.0.1",
+       "resolved": "https://registry.npmjs.org/human-signals/-/human-signals-8.0.1.tgz",
+@@ -3347,6 +3691,26 @@
+         "node": ">=0.8.19"
+       }
+     },
++    "node_modules/inflection": {
++      "version": "3.0.2",
++      "resolved": "https://registry.npmjs.org/inflection/-/inflection-3.0.2.tgz",
++      "integrity": "sha512-+Bg3+kg+J6JUWn8J6bzFmOWkTQ6L/NHfDRSYU+EVvuKHDxUDHAXgqixHfVlzuBQaPOTac8hn43aPhMNk6rMe3g==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=18.0.0"
++      }
++    },
++    "node_modules/ipaddr.js": {
++      "version": "2.2.0",
++      "resolved": "https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-2.2.0.tgz",
++      "integrity": "sha512-Ag3wB2o37wslZS19hZqorUnrnzSkpOVy+IiiDEiTqNubEYpYuHWIf6K4psgN2ZWKExS4xhVCrRVfb/wfW8fWJA==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">= 10"
++      }
++    },
+     "node_modules/is-docker": {
+       "version": "3.0.0",
+       "resolved": "https://registry.npmjs.org/is-docker/-/is-docker-3.0.0.tgz",
+@@ -3557,6 +3921,62 @@
+       "dev": true,
+       "license": "MIT"
+     },
++    "node_modules/json-server": {
++      "version": "1.0.0-beta.3",
++      "resolved": "https://registry.npmjs.org/json-server/-/json-server-1.0.0-beta.3.tgz",
++      "integrity": "sha512-DwE69Ep5ccwIJZBUIWEENC30Yj8bwr4Ax9W9VoIWAYnB8Sj4ReptscO8/DRHv/nXwVlmb3Bk73Ls86+VZdYkkA==",
++      "dev": true,
++      "license": "SEE LICENSE IN ./LICENSE",
++      "dependencies": {
++        "@tinyhttp/app": "^2.4.0",
++        "@tinyhttp/cors": "^2.0.1",
++        "@tinyhttp/logger": "^2.0.0",
++        "chalk": "^5.3.0",
++        "chokidar": "^4.0.1",
++        "dot-prop": "^9.0.0",
++        "eta": "^3.5.0",
++        "inflection": "^3.0.0",
++        "json5": "^2.2.3",
++        "lowdb": "^7.0.1",
++        "milliparsec": "^4.0.0",
++        "sirv": "^2.0.4",
++        "sort-on": "^6.1.0"
++      },
++      "bin": {
++        "json-server": "lib/bin.js"
++      },
++      "engines": {
++        "node": ">=18.3"
++      }
++    },
++    "node_modules/json-server/node_modules/chalk": {
++      "version": "5.6.2",
++      "resolved": "https://registry.npmjs.org/chalk/-/chalk-5.6.2.tgz",
++      "integrity": "sha512-7NzBL0rN6fMUW+f7A6Io4h40qQlG+xGmtMxfbnH/K7TAtt8JQWVQK+6g0UXKMeVJoyV5EkkNsErQ8pVD3bLHbA==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": "^12.17.0 || ^14.13 || >=16.0.0"
++      },
++      "funding": {
++        "url": "https://github.com/chalk/chalk?sponsor=1"
++      }
++    },
++    "node_modules/json-server/node_modules/sirv": {
++      "version": "2.0.4",
++      "resolved": "https://registry.npmjs.org/sirv/-/sirv-2.0.4.tgz",
++      "integrity": "sha512-94Bdh3cC2PKrbgSOUqTiGPWVZeSiXfKOVZNJniWoqrWrRkB1CJzBU3NEbiTsPcYy1lDsANA/THzS+9WBiy5nfQ==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "@polka/url": "^1.0.0-next.24",
++        "mrmime": "^2.0.0",
++        "totalist": "^3.0.0"
++      },
++      "engines": {
++        "node": ">= 10"
++      }
++    },
+     "node_modules/json-stable-stringify-without-jsonify": {
+       "version": "1.0.1",
+       "resolved": "https://registry.npmjs.org/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz",
+@@ -3631,6 +4051,22 @@
+       "dev": true,
+       "license": "MIT"
+     },
++    "node_modules/lowdb": {
++      "version": "7.0.1",
++      "resolved": "https://registry.npmjs.org/lowdb/-/lowdb-7.0.1.tgz",
++      "integrity": "sha512-neJAj8GwF0e8EpycYIDFqEPcx9Qz4GUho20jWFR7YiFeXzF1YMLdxB36PypcTSPMA+4+LvgyMacYhlr18Zlymw==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "steno": "^4.0.2"
++      },
++      "engines": {
++        "node": ">=18"
++      },
++      "funding": {
++        "url": "https://github.com/sponsors/typicode"
++      }
++    },
+     "node_modules/lru-cache": {
+       "version": "5.1.1",
+       "resolved": "https://registry.npmjs.org/lru-cache/-/lru-cache-5.1.1.tgz",
+@@ -3683,6 +4119,32 @@
+         "node": ">=8.6"
+       }
+     },
++    "node_modules/milliparsec": {
++      "version": "4.0.0",
++      "resolved": "https://registry.npmjs.org/milliparsec/-/milliparsec-4.0.0.tgz",
++      "integrity": "sha512-/wk9d4Z6/9ZvoEH/6BI4TrTCgmkpZPuSRN/6fI9aUHOfXdNTuj/VhLS7d+NqG26bi6L9YmGXutVYvWC8zQ0qtA==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=20"
++      }
++    },
++    "node_modules/mime": {
++      "version": "4.0.4",
++      "resolved": "https://registry.npmjs.org/mime/-/mime-4.0.4.tgz",
++      "integrity": "sha512-v8yqInVjhXyqP6+Kw4fV3ZzeMRqEW6FotRsKXjRS5VMTNIuXsdRoAvklpoRgSqXm6o9VNH4/C0mgedko9DdLsQ==",
++      "dev": true,
++      "funding": [
++        "https://github.com/sponsors/broofa"
++      ],
++      "license": "MIT",
++      "bin": {
++        "mime": "bin/cli.js"
++      },
++      "engines": {
++        "node": ">=16"
++      }
++    },
+     "node_modules/minimatch": {
+       "version": "9.0.5",
+       "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.5.tgz",
+@@ -3755,6 +4217,16 @@
+       "dev": true,
+       "license": "MIT"
+     },
++    "node_modules/negotiator": {
++      "version": "0.6.4",
++      "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.4.tgz",
++      "integrity": "sha512-myRT3DiWPHqho5PrJaIRyaMv2kgYf0mUVgBNOYMuCH5Ki1yEiQaf/ZJuQ62nvpc44wL5WDbTX7yGJi1Neevw8w==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">= 0.6"
++      }
++    },
+     "node_modules/node-releases": {
+       "version": "2.0.23",
+       "resolved": "https://registry.npmjs.org/node-releases/-/node-releases-2.0.23.tgz",
+@@ -4211,6 +4683,30 @@
+         "node": "^18.17.0 || >=20.5.0"
+       }
+     },
++    "node_modules/readdirp": {
++      "version": "4.1.2",
++      "resolved": "https://registry.npmjs.org/readdirp/-/readdirp-4.1.2.tgz",
++      "integrity": "sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">= 14.18.0"
++      },
++      "funding": {
++        "type": "individual",
++        "url": "https://paulmillr.com/funding/"
++      }
++    },
++    "node_modules/regexparam": {
++      "version": "2.0.2",
++      "resolved": "https://registry.npmjs.org/regexparam/-/regexparam-2.0.2.tgz",
++      "integrity": "sha512-A1PeDEYMrkLrfyOwv2jwihXbo9qxdGD3atBYQA9JJgreAx8/7rC6IUkWOw2NQlOxLp2wL0ifQbh1HuidDfYA6w==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=8"
++      }
++    },
+     "node_modules/resolve-from": {
+       "version": "4.0.0",
+       "resolved": "https://registry.npmjs.org/resolve-from/-/resolve-from-4.0.0.tgz",
+@@ -4395,6 +4891,22 @@
+         "node": ">=18"
+       }
+     },
++    "node_modules/sort-on": {
++      "version": "6.1.1",
++      "resolved": "https://registry.npmjs.org/sort-on/-/sort-on-6.1.1.tgz",
++      "integrity": "sha512-PB8pVvXAoRBijBCvuKJnmo06D8mSnQlLij0abfB2VdOpfFm29sPGYD4ft2prUPo1AZXTnkn3pP48AppRWyMkrw==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "dot-prop": "^9.0.0"
++      },
++      "engines": {
++        "node": ">=18"
++      },
++      "funding": {
++        "url": "https://github.com/sponsors/sindresorhus"
++      }
++    },
+     "node_modules/source-map-js": {
+       "version": "1.2.1",
+       "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz",
+@@ -4414,6 +4926,19 @@
+         "node": ">=0.10.0"
+       }
+     },
++    "node_modules/steno": {
++      "version": "4.0.2",
++      "resolved": "https://registry.npmjs.org/steno/-/steno-4.0.2.tgz",
++      "integrity": "sha512-yhPIQXjrlt1xv7dyPQg2P17URmXbuM5pdGkpiMB3RenprfiBlvK415Lctfe0eshk90oA7/tNq7WEiMK8RSP39A==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=18"
++      },
++      "funding": {
++        "url": "https://github.com/sponsors/typicode"
++      }
++    },
+     "node_modules/strip-final-newline": {
+       "version": "4.0.0",
+       "resolved": "https://registry.npmjs.org/strip-final-newline/-/strip-final-newline-4.0.0.tgz",
+@@ -4579,6 +5104,19 @@
+         "node": ">= 0.8.0"
+       }
+     },
++    "node_modules/type-fest": {
++      "version": "4.41.0",
++      "resolved": "https://registry.npmjs.org/type-fest/-/type-fest-4.41.0.tgz",
++      "integrity": "sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==",
++      "dev": true,
++      "license": "(MIT OR CC0-1.0)",
++      "engines": {
++        "node": ">=16"
++      },
++      "funding": {
++        "url": "https://github.com/sponsors/sindresorhus"
++      }
++    },
+     "node_modules/typescript": {
+       "version": "5.9.3",
+       "resolved": "https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz",
+@@ -4716,9 +5254,9 @@
+       "license": "MIT"
+     },
+     "node_modules/vite": {
+-      "version": "7.1.9",
+-      "resolved": "https://registry.npmjs.org/vite/-/vite-7.1.9.tgz",
+-      "integrity": "sha512-4nVGliEpxmhCL8DslSAUdxlB6+SMrhB0a1v5ijlh1xB1nEPuy1mxaHxysVucLHuWryAxLWg6a5ei+U4TLn/rFg==",
++      "version": "7.2.4",
++      "resolved": "https://registry.npmjs.org/vite/-/vite-7.2.4.tgz",
++      "integrity": "sha512-NL8jTlbo0Tn4dUEXEsUg8KeyG/Lkmc4Fnzb8JXN/Ykm9G4HNImjtABMJgkQoVjOBN/j2WAwDTRytdqJbZsah7w==",
+       "dev": true,
+       "license": "MIT",
+       "dependencies": {
+diff --git a/cpwII-project/package.json b/cpwII-project/package.json
+index 12a4950..34977bc 100644
+--- a/cpwII-project/package.json
++++ b/cpwII-project/package.json
+@@ -28,10 +28,11 @@
+     "eslint": "^9.33.0",
+     "eslint-plugin-vue": "~10.4.0",
+     "jiti": "^2.5.1",
++    "json-server": "^1.0.0-beta.3",
+     "npm-run-all2": "^8.0.4",
+     "prettier": "3.6.2",
+     "typescript": "~5.9.0",
+-    "vite": "^7.1.7",
++    "vite": "^7.2.4",
+     "vite-plugin-vue-devtools": "^8.0.2",
+     "vue-tsc": "^3.1.0"
+   }
+diff --git a/cpwII-project/src/CorPoario.vue b/cpwII-project/src/CorPoario.vue
+index 65dcc38..673365d 100644
+--- a/cpwII-project/src/CorPoario.vue
++++ b/cpwII-project/src/CorPoario.vue
+@@ -1,10 +1,29 @@
+ <script setup lang="ts">
+ import { ref } from 'vue';
+ import VtButton from './components/Button/VtButton.vue';
+-import VtWizard from './components/Wizard/VtWizard.vue';
+-import VtWizardStep from './components/Wizard/VtWizardStep.vue';
++import VtDialog from './components/Dialog/VtDialog.vue';
++import CommissionWizard from './pages/commissionPath/CommissionWizard.vue';
+ 
+-const activeStep = ref(0);
++const currentPage = ref('home');
++const showDialog = ref(true);
++
++function handleConfirm() {
++  console.log('Confirmed');
++  showDialog.value = false;
++}
++
++function handleCancel() {
++  console.log('Cancelled');
++  showDialog.value = false;
++}
++
++function goToCommission() {
++  currentPage.value = 'commission';
++}
++
++function goHome() {
++  currentPage.value = 'home';
++}
+ 
+ function onComplete() {
+   console.log('Wizard completed');
+@@ -12,42 +31,30 @@ function onComplete() {
+ </script>
+ 
+ <template>
+-  <header></header>
+-
+-  <main>
+-    <h1>Homepage</h1>
+-    <div>
+-      <h2>VtButton component examples</h2>
+-      <VtButton label="Primary" />
+-      <VtButton label="Secondary" variant="outlined" />
+-      <VtButton as="a" href="https://example.com" label="Go to link" variant="text" />
+-      <VtButton label="Success" severity="success" />
+-      <VtButton label="Info" severity="info" />
+-      <VtButton label="Warning" severity="warning" />
+-      <VtButton label="Danger" severity="danger" />
+-      <VtButton label="Block Button" block />
+-    </div>
+-    <div>
+-      <h2>VtWizard component example</h2>
+-      <VtWizard v-model:activeIndex="activeStep" :linear="true">
+-        <VtWizardStep title="Step 1">
+-          <p>This is the content for step 1.</p>
+-        </VtWizardStep>
+-
+-        <VtWizardStep title="Step 2">
+-          <p>This is the content for step 2.</p>
+-        </VtWizardStep>
+-
+-        <VtWizardStep title="Step 3" :optional="true">
+-          <p>This is the content for step 3 (optional).</p>
+-        </VtWizardStep>
+-
+-        <VtWizardStep title="Step 4">
+-          <p>This is the content for step 4.</p>
+-        </VtWizardStep>
+-      </VtWizard>
++  <VtDialog />
++
++  <header>
++    <div v-if="currentPage !== 'home'">
++      <VtButton label="Back to Home" @click="goHome" />
+     </div>
+-  </main>
++  </header>
++
++    <!-- Homepage -->
++  <div v-if="currentPage === 'home'">
++    <main>
++      <h1>Welcome to corpoario</h1>
++      <div>
++        <VtButton label="Commission yours" @click="goToCommission" />
++      </div>
++    </main>
++  </div>
++
++  <!-- Commission Page -->
++  <div v-if="currentPage === 'commission'">
++    <main>
++      <CommissionWizard />
++    </main>
++  </div>
+ 
+   <footer></footer>
+ </template>
+diff --git a/cpwII-project/src/assets/main.css b/cpwII-project/src/assets/main.css
+index 88cb5ae..e71bbc2 100644
+--- a/cpwII-project/src/assets/main.css
++++ b/cpwII-project/src/assets/main.css
+@@ -2,23 +2,33 @@
+ @import './base.css';
+ 
+ #app {
+-  max-width: 1280px;
+-  margin: 0 auto;
+-  padding: 2rem;
++  width: calc(100vw - 20px);
++  height: 100vh;
++  margin: 0;
++  padding: 0;
+   font-weight: normal;
+-  border: 1px solid #7a6fbf;
+ }
+ 
+ body {
+-  display: flex;
+-  place-items: center;
+-  min-height: 100vh;
++  margin: 0;
++  padding: 10px;
++  width: 100vw;
++  height: 100vh;
+ }
+ 
+ @media (min-width: 1024px) {
+   body {
++      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+     display: flex;
+     place-items: center;
+     justify-content: flex-start;
+   }
+ }
++
++header {
++  padding: 10px 0px 10px 0px;
++}
++
++label {
++  display: block;
++}
+diff --git a/cpwII-project/src/assets/tokens.css b/cpwII-project/src/assets/tokens.css
+index 474204b..8d3c7d1 100644
+--- a/cpwII-project/src/assets/tokens.css
++++ b/cpwII-project/src/assets/tokens.css
+@@ -10,7 +10,7 @@
+   --vt-border: rgba(0, 0, 0, 0.12);
+ 
+   /* Radius */
+-  --vt-radius: 0.3rem;
++  --vt-radius: 8px;
+   --vt-radius-round: 9999px;
+ 
+   /* Spacing */
+diff --git a/cpwII-project/src/components/WelcomeItem.vue b/cpwII-project/src/components/WelcomeItem.vue
+index 6d7086a..e329ac8 100644
+--- a/cpwII-project/src/components/WelcomeItem.vue
++++ b/cpwII-project/src/components/WelcomeItem.vue
+@@ -53,7 +53,7 @@ h3 {
+     position: absolute;
+     border: 1px solid var(--color-border);
+     background: var(--color-background);
+-    border-radius: 8px;
++    border-radius: var(--vt-radius);
+     width: 50px;
+     height: 50px;
+   }
+diff --git a/cpwII-project/src/components/Wizard/VtWizard.vue b/cpwII-project/src/components/Wizard/VtWizard.vue
+index 3189353..62cde36 100644
+--- a/cpwII-project/src/components/Wizard/VtWizard.vue
++++ b/cpwII-project/src/components/Wizard/VtWizard.vue
+@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<VtWizardProps>(), {
+   nextLabel: 'Next',
+   previousLabel: 'Back',
+   finishLabel: 'Finish',
+-  finishOnLastNext: false, // what does this folk do?
++  finishOnLastNext: false,
+ });
+ 
+ const emit = defineEmits<{
+@@ -75,10 +75,10 @@ const currentStep = computed(() => steps.value[internalIndex.value]);
+ 
+ const canGoPrevious = computed(() => !isFirst.value);
+ const canGoNext = computed(() => {
+-  if (isLast.value) return props.finishOnLastNext; // allow "Next" to trigger completion if configured
++  if (isLast.value) return props.finishOnLastNext;
+   const nextStep = steps.value[internalIndex.value + 1];
++  
+   if (!nextStep || nextStep.disabled) return false;
+-  // If linear, only allow advancing exactly one step (already enforced by UI click)
+   return currentStep.value?.valid !== false;
+ });
+ 
+@@ -171,7 +171,7 @@ watch(internalIndex, (idx) => {
+ </script>
+ 
+ <template>
+-  <div class="vt-wizard">
++  <div class="vt-wizard-container">
+     <div v-if="!slots.header" class="vt-wizard-header" role="navigation" aria-label="Wizard steps">
+       <ol class="vt-wizard-stepper">
+         <li
+@@ -245,11 +245,21 @@ watch(internalIndex, (idx) => {
+ </template>
+ 
+ <style scoped>
+-.vt-wizard {
++.vt-wizard-container {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   width: 100%;
++  border: 1px solid #e0e0e0;
++  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
++  border-radius: 8px;
++  padding: 20px;
++}
++
++.vt-wizard-header {
++  display: flex;
++  align-items: center;
++  justify-content: center;
+ }
+ 
+ .vt-wizard-stepper {
+diff --git a/cpwII-project/src/components/Wizard/VtWizardStep.vue b/cpwII-project/src/components/Wizard/VtWizardStep.vue
+index 02b3b32..8a0f231 100644
+--- a/cpwII-project/src/components/Wizard/VtWizardStep.vue
++++ b/cpwII-project/src/components/Wizard/VtWizardStep.vue
+@@ -20,7 +20,4 @@ const props = defineProps<VtWizardStepProps>();
+ </template>
+ 
+ <style scoped>
+-.vt-wizard-step {
+-  /* Step content wrapper; VtWizard controls visibility */
+-}
+ </style>
